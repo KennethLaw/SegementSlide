@@ -40,53 +40,56 @@ class BaseSegementSlideDefaultViewController: SegementSlideDefaultViewController
         return fadeTextAnimation
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
+//    }
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
+//        debugPrint("\(type(of: self)) - \(String(format: "%p", self)) - \(#function)")
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "more", style: .plain, target: self, action: #selector(moreAction))
     }
     
     @objc
     private func moreAction() {
-        let viewController: UIViewController
-        switch Int.random(in: 0..<9) {
-        case 0..<4:
-            viewController = NoticeViewController(selectedIndex: Int.random(in: 0..<DataManager.shared.noticeLanguageTitles.count))
-        case 4:
-            viewController = PostViewController(selectedIndex: Int.random(in: 0..<DataManager.shared.postLanguageTitles.count))
-        case 5:
-            viewController = HomeViewController()
-        case 6:
-            viewController = ExploreViewController()
-        case 7:
-            viewController = InterestViewController()
-        case 8:
-            viewController = MineViewController()
-        default:
-            viewController = UIViewController()
-        }
-        viewController.hidesBottomBarWhenPushed = Bool.random()
+//        let viewController: UIViewController
+//        switch Int.random(in: 0..<9) {
+//        case 0..<4:
+//            viewController = NoticeViewController(selectedIndex: Int.random(in: 0..<DataManager.shared.noticeLanguageTitles.count))
+//        case 4:
+//            viewController = PostViewController(selectedIndex: Int.random(in: 0..<DataManager.shared.postLanguageTitles.count))
+//        case 5:
+//            viewController = HomeViewController()
+//        case 6:
+//            viewController = ExploreViewController()
+//        case 7:
+//            viewController = InterestViewController()
+//        case 8:
+//            viewController = MineViewController()
+//        default:
+//            viewController = UIViewController()
+//        }
+//        viewController.hidesBottomBarWhenPushed = Bool.random()
+        
+        let viewController = HomeViewController()
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
     

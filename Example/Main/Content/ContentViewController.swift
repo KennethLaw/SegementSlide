@@ -103,11 +103,13 @@ class ContentViewController: BaseTableViewController, SegementSlideContentScroll
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let language = languages[indexPath.row]
-        if Bool.random() {
-            present(BaseNavigationController(rootViewController: LanguageCenterViewController(id: language.id, isPresented: true)), animated: true, completion: nil)
-        } else {
-            navigationController?.pushViewController(LanguageCenterViewController(id: language.id, isPresented: false), animated: true)
-        }
+//        if Bool.random() {
+//            present(BaseNavigationController(rootViewController: LanguageCenterViewController(id: language.id, isPresented: true)), animated: true, completion: nil)
+//        } else {
+//            navigationController?.pushViewController(LanguageCenterViewController(id: language.id, isPresented: false), animated: true)
+//        }
+        
+        navigationController?.pushViewController(LanguageCenterViewController(id: language.id, isPresented: false), animated: true)
     }
     
     deinit {

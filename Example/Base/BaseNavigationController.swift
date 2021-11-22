@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HBDNavigationBar
 
-class BaseNavigationController: UINavigationController {
+class BaseNavigationController: HBDNavigationController {
     
     override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)

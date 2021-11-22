@@ -25,36 +25,36 @@ class HomeViewController: BaseSegementSlideDefaultViewController {
     }
     
     override var bouncesType: BouncesType {
-        return .child
+        return .parent
     }
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView, isParent: Bool) {
-        guard !isParent else {
-            return
-        }
-        guard let navigationController = navigationController else {
-            return
-        }
-        let translationY = -scrollView.panGestureRecognizer.translation(in: scrollView).y
-        if translationY > 0 {
-            guard !navigationController.isNavigationBarHidden else {
-                return
-            }
-            navigationController.setNavigationBarHidden(true, animated: true)
-        } else {
-            guard !scrollView.isTracking else {
-                return
-            }
-            guard navigationController.isNavigationBarHidden else {
-                return
-            }
-            navigationController.setNavigationBarHidden(false, animated: true)
-        }
-    }
+//    override func scrollViewDidScroll(_ scrollView: UIScrollView, isParent: Bool) {
+//        guard !isParent else {
+//            return
+//        }
+//        guard let navigationController = navigationController else {
+//            return
+//        }
+//        let translationY = -scrollView.panGestureRecognizer.translation(in: scrollView).y
+//        if translationY > 0 {
+//            guard !navigationController.isNavigationBarHidden else {
+//                return
+//            }
+//            navigationController.setNavigationBarHidden(true, animated: true)
+//        } else {
+//            guard !scrollView.isTracking else {
+//                return
+//            }
+//            guard navigationController.isNavigationBarHidden else {
+//                return
+//            }
+//            navigationController.setNavigationBarHidden(false, animated: true)
+//        }
+//    }
     
     override var switcherConfig: SegementSlideDefaultSwitcherConfig {
         var config = super.switcherConfig
@@ -94,9 +94,9 @@ class HomeViewController: BaseSegementSlideDefaultViewController {
         reloadData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
 
 }

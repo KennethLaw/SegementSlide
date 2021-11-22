@@ -13,6 +13,7 @@ target 'Example' do
     pod 'MJRefresh'
     pod 'SnapKit'
     pod 'MBProgressHUD'
+    pod 'HBDNavigationBar', '1.9.2'
     common_pods
 end
 
